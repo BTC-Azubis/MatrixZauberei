@@ -4,7 +4,11 @@ import java.util.Random;
 import matrixzauberei.model.Matrix;
 
 public class MatrixController
-{    
+{
+    /**
+     * Fills the Matrix A with random Integer values
+     * @param A 
+     */
     public static void fillWithRandomIntValues (Matrix A)
     {
         Random randomizer = new Random();
@@ -13,11 +17,17 @@ public class MatrixController
         {
             for (int j = 0; j < A.getColumnCount(); j++)
             {
-                A.setElement(i, j, randomizer.nextInt(4));
+                A.setElement(i, j, randomizer.nextInt(10));
             }
         }
     }
     
+    /**
+     * Adds Matrix B to Matrix A
+     * @param A
+     * @param B
+     * @return 
+     */
     public static Matrix add (Matrix A, Matrix B)
     {
         if ((A.getColumnCount() != B.getColumnCount()) || (A.getRowCount() != B.getRowCount()))
@@ -39,6 +49,12 @@ public class MatrixController
         return C;
     }
     
+    /**
+     * Multiplies the Matrix B to Matrix A
+     * @param A
+     * @param B
+     * @return returns null if A.getColumnCount() != B.getRowCount()
+     */
     public static Matrix multiply (Matrix A, Matrix B)
     {
         if (A.getColumnCount() != B.getRowCount())
@@ -65,6 +81,12 @@ public class MatrixController
         return C;
     }
     
+    /**
+     * Does the same as {@link matrixzauberei.control.MatrixController#multiply multiply}
+     * @param A
+     * @param B
+     * @return 
+     */
     public static Matrix multiplyAlternativeWhile (Matrix A, Matrix B)
     {
         if (A.getColumnCount() != B.getRowCount())
@@ -96,6 +118,12 @@ public class MatrixController
         return C;
     }
     
+    /**
+     * Does the same as {@link matrixzauberei.control.MatrixController#multiply multiply}
+     * @param A
+     * @param B
+     * @return 
+     */
     public static Matrix multiplyAlternativeDoWhile (Matrix A, Matrix B)
     {
         if (A.getColumnCount() != B.getRowCount())
