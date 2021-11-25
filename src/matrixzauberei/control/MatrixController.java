@@ -3,6 +3,10 @@ package matrixzauberei.control;
 import java.util.Random;
 import matrixzauberei.model.Matrix;
 
+/**
+ * 
+ * @author Jesse Gollub
+ */
 public class MatrixController
 {
     /**
@@ -26,7 +30,7 @@ public class MatrixController
      * Adds Matrix B to Matrix A
      * @param A
      * @param B
-     * @return 
+     * @return returns null if (A.getColumnCount() != B.getColumnCount()) || (A.getRowCount() != B.getRowCount())
      */
     public static Matrix add (Matrix A, Matrix B)
     {
